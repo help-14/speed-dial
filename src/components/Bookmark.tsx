@@ -5,7 +5,7 @@ import { IsLocal } from "./Local"
 const Bookmark: Component<{ data: BookmarkItem }> = (props) => {
   const bookmark = props.data
   const [showing, setShowing] = createSignal(bookmark.url ? true : false)
-  const [url, setUrl] = createSignal(bookmark.url ?? bookmark.urlLocal)
+  const [url, setUrl] = createSignal(bookmark.url || bookmark.urlLocal)
 
   IsLocal().then((result) => {
     if (result) {
