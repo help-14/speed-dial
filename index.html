@@ -65,7 +65,7 @@
       skycons.add("weather-icon", icon);
       skycons.play();
       // Set weather info
-      if (window.config.useMetric) {
+      if (true) {
         document.querySelector("#temp").innerText = Math.floor(weather.main.temp - 273.15) + "°C";
       } else {
         document.querySelector("#temp").innerText = Math.floor((weather.main.temp - 32) * 5 / 9) + "°F";

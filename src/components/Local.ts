@@ -12,7 +12,7 @@ function ping(ip: string, timeout: number): Promise<boolean> {
     img.onerror = function (e: any) {
       resolve(true)
     }
-    img.src = "http://" + ip
+    img.src = "https://" + ip
     setTimeout(function () {
       resolve(false)
     }, timeout)
