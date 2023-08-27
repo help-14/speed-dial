@@ -14,7 +14,6 @@ export async function onRequest({ request, env }) {
     const expireAt = weatherInfo?.expireAt || 0
     if (currentTime > expireAt) {
         const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&limit=1&appid=${env.WEATHER_API}`)
-        console.log(weatherResponse)
         if (weatherResponse.ok) {
             response = await weatherResponse.json()
             await env.API.put(storageKey, JSON.stringify({

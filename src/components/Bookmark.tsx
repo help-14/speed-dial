@@ -8,12 +8,9 @@ const Bookmark: Component<{ data: BookmarkItem }> = (props) => {
   const [url, setUrl] = createSignal(bookmark.url)
 
   IsLocal().then((result) => {
-    if (result) {
-      setShowing(true)
-      setUrl(props.data.urlLocal)
-    } else {
-      setUrl(props.data.url)
-    }
+    if (!result) return
+    setShowing(true)
+    if (props.data.urlLocal) setUrl(props.data.urlLocal)
   })
 
   const showIcon = () => {

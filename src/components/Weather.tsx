@@ -2,10 +2,9 @@ import { type Component } from "solid-js"
 import { createSignal } from "solid-js"
 
 const Weather: Component = () => {
-  //   const [clock, setClock] = createSignal("")
   //   async function loadWeather() {
   //     // Get info from api
-  //     const weather = await (await fetch("./weather")).json()
+  //     const weather = await (await fetch("/weather")).json()
   //     if (!weather) return
   //     // Parse weather id
   //     let icon = null

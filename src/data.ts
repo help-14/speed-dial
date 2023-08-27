@@ -3,6 +3,8 @@ import { WebData } from "./types/data"
 export const WebsiteData: WebData = {
   localPingUrl: "10.0.0.242",
   localPingTimeout: 300,
+  longitude: 105.808534,
+  latitude: 21.042698,
   groups: [
     {
       title: "Applications",
