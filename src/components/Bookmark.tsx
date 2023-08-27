@@ -11,6 +11,8 @@ const Bookmark: Component<{ data: BookmarkItem }> = (props) => {
     if (result) {
       setShowing(true)
       setUrl(props.data.urlLocal)
+    } else {
+      setUrl(props.data.url)
     }
   })
 
