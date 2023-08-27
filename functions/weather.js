@@ -10,7 +10,9 @@ export async function onRequest({ request, env }) {
     const weatherInfo = JSON.parse(rawData)
     const currentTime = new Date().getTime()
 
-    if (!weatherInfo || currentTime > weatherInfo.expireAt) {
+    if (!weatherInfo?.data) return new Response({})
+
+    if (currentTime > weatherInfo.expireAt) {
         const weatherResponse = {}
         if (weatherResponse.ok) {
             await env.API.put(storageKey, JSON.stringify({
