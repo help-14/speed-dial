@@ -23,6 +23,11 @@ export const WebsiteData: WebData = {
               icon: "https://help-14.github.io/files/icons/cloudflare.svg",
               url: "https://dash.cloudflare.com",
             },
+            {
+              title: "Adguard",
+              icon: "https://help-14.github.io/files/icons/adguard.svg",
+              url: "http://10.0.0.238/",
+            },
           ],
         },
         {
@@ -38,11 +43,27 @@ export const WebsiteData: WebData = {
               icon: "fa-solid fa-cloud-arrow-down",
               url: "http://10.0.0.242:10003/",
             },
+            {
+              title: "Torrent",
+              icon: "https://help-14.github.io/files/icons/utorrent.svg",
+              url: "http://10.0.0.242:10008/",
+            },
           ],
         },
         {
           title: "Media",
           data: [
+            {
+              title: "Jellyfin",
+              icon: "https://help-14.github.io/files/icons/jellyfin.svg",
+              url: "https://phim.nhan.pt",
+              urlLocal: "http://10.0.0.242:10001/",
+            },
+            {
+              title: "Tdarr",
+              icon: "https://help-14.github.io/files/icons/tdarr.svg",
+              url: "http://10.0.0.242:10007/",
+            },
             {
               title: "Music",
               icon: "fa-solid fa-music",
@@ -54,6 +75,11 @@ export const WebsiteData: WebData = {
         {
           title: "Tools",
           data: [
+            {
+              title: "Cups",
+              icon: "fa-solid fa-print",
+              url: "https://10.0.0.240:631/admin/",
+            },
             {
               title: "SVG viewer",
               icon: "fa-solid fa-vector-square",
