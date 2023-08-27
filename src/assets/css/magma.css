@@ -1,0 +1,103 @@
+body {
+  background-color: var(--bgColor);
+  color: var(--foreground);
+  z-index: -999;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  margin-top: -5%;
+  background-image: var(--bgImage);
+  transform: scale(1.2);
+  filter: blur(0.2rem);
+  opacity: 0.6;
+  z-index: -998;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.accent {
+  color: var(--accentColor) !important;
+}
+
+.hidden {
+  display: hidden;
+}
+
+#header {
+  margin-top: 10%;
+}
+
+#footer {
+  margin-bottom: 10%;
+}
+
+#header-right {
+  align-content: center;
+  float: right;
+}
+
+.group-title {
+  margin-top: 5%;
+}
+
+.group-items a {
+  padding: 15px !important;
+  margin-top: 10px !important;
+  margin-bottom: 0 !important;
+  border-radius: 0.7rem !important;
+  align-items: center !important;
+  line-height: 2;
+  transition: all 0.25s;
+  display: flex;
+  width: 100%;
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.group-items h6 {
+  align-items: center;
+  margin-bottom: 0 !important;
+  margin-left: 0.5em !important;
+  display: inline-block;
+  vertical-align: bottom !important;
+  font-weight: 500;
+}
+
+.group-items .icon-container {
+  margin-top: 0px !important;
+  margin-left: 0.5em !important;
+  margin-right: 0.7em !important;
+  text-align: center;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+}
+
+.group-items .icon {
+  vertical-align: middle;
+}
+
+.group-items .svg-icon {
+  vertical-align: middle;
+  fill: var(--foreground) !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.group-items a:hover {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  cursor: pointer;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .group-items a:hover {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.3) !important;
+  }
+}

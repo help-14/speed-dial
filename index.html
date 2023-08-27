@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="shortcut icon" type="image/ico" href="/src/assets/favicon.ico" />
+  <title>Help-14 dashboard</title>
+
+  <link rel="stylesheet" href="/src/assets/css/normalize.min.css">
+  <link rel="stylesheet" href="/src/assets/css/skeleton.min.css">
+
+  <link rel="stylesheet" href="/src/assets/css/all.min.css">
+  <link rel="stylesheet" href="/src/assets/css/core.css">
+  <link rel="stylesheet" href="/src/assets/css/magma.css">
+
+  <script>
+    customElements.define("svg-file", class extends HTMLElement {
+      async connectedCallback(
+        src = this.getAttribute("src"),
+        shadowRoot = this.shadowRoot || this.attachShadow({ mode: "open" })
+      ) {
+        shadowRoot.innerHTML = await (await fetch(src)).text()
+        shadowRoot.append(...this.querySelectorAll("[shadowRoot]"))
+        this.hasAttribute("replaceWith") && this.replaceWith(...shadowRoot.childNodes)
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div class="bg"></div>
+  <div id="root"></div>
+  <script src="/src/index.tsx" type="module"></script>
+
+</body>
+
+</html>
