@@ -11,19 +11,19 @@ export async function onRequest({ request, env }) {
     const weatherInfo = JSON.parse(rawData)
     const currentTime = new Date().getTime()
 
-    if (weatherInfo?.data) {
-        response = weatherInfo.data
-        if (currentTime > weatherInfo.expireAt) {
-            const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&limit=1&appid=${env.WEATHER_API}`)
-            console.log(weatherResponse)
-            if (weatherResponse.ok) {
-                response = await weatherResponse.json()
-                await env.API.put(storageKey, JSON.stringify({
-                    expireAt: currentTime + 10 * 60 * 1000,
-                    data: response
-                }))
-            }
+    const expireAt = weatherInfo?.expireAt || 0
+    if (currentTime > expireAt) {
+        const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&limit=1&appid=${env.WEATHER_API}`)
+        console.log(weatherResponse)
+        if (weatherResponse.ok) {
+            response = await weatherResponse.json()
+            await env.API.put(storageKey, JSON.stringify({
+                expireAt: currentTime + 10 * 60 * 1000,
+                data: response
+            }))
         }
+    } else if (weatherInfo?.data) {
+        response = weatherInfo.data
     }
 
     return new Response(JSON.stringify(response), {
