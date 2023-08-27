@@ -1,9 +1,18 @@
-import { createSignal, type Component } from "solid-js"
+import { createSignal, type Component, Show } from "solid-js"
 import { BookmarkItem } from "../types/bookmark"
+import { IsLocal } from "./Local"
 
 const Bookmark: Component<{ data: BookmarkItem }> = (props) => {
   const bookmark = props.data
-  const [url, setUrl] = createSignal(bookmark.url)
+  const [showing, setShowing] = createSignal(bookmark.url ? true : false)
+  const [url, setUrl] = createSignal(bookmark.url ?? bookmark.urlLocal)
+
+  IsLocal().then((result) => {
+    if (result) {
+      setShowing(true)
+      setUrl(props.data.urlLocal)
+    }
+  })
 
   const showIcon = () => {
     if (bookmark.icon.endsWith(".svg")) {
@@ -18,10 +27,12 @@ const Bookmark: Component<{ data: BookmarkItem }> = (props) => {
   }
 
   return (
-    <a href={url()}>
-      <div class="icon-container">{showIcon()}</div>
-      <h6>{bookmark.title}</h6>
-    </a>
+    <Show when={showing()}>
+      <a href={url()}>
+        <div class="icon-container">{showIcon()}</div>
+        <h6>{bookmark.title}</h6>
+      </a>
+    </Show>
   )
 }
 

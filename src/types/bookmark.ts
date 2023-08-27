@@ -3,5 +3,4 @@ export type BookmarkItem = {
   icon: string
   url?: string
   urlLocal?: string
-  isLocal?: boolean
 }

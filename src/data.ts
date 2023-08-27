@@ -1,6 +1,8 @@
 import { WebData } from "./types/data"
 
 export const WebsiteData: WebData = {
+  localPingUrl: "10.0.0.242",
+  localPingTimeout: 300,
   groups: [
     {
       title: "Applications",
@@ -78,7 +80,7 @@ export const WebsiteData: WebData = {
             {
               title: "Cups",
               icon: "fa-solid fa-print",
-              url: "https://10.0.0.240:631/admin/",
+              urlLocal: "https://10.0.0.240:631/admin/",
             },
             {
               title: "SVG viewer",
