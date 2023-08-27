@@ -19,7 +19,7 @@ jobs:
         run: npm run build
 
       - name: Copy cloudflare functions
-        run: cp functions/ ./dist/
+        run: cp -r functions/ ./dist/
 
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v3.1.0
