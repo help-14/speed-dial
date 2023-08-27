@@ -12,11 +12,14 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v3
 
-      - name: install
+      - name: Install dependencies
         run: npm i --legacy-peer-deps
 
-      - name: build
+      - name: Build
         run: npm run build
+
+      - name: Copy cloudflare functions
+        run: cp functions/ ./dist/
 
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v3.1.0
