@@ -7,11 +7,13 @@ const Bookmark: Component<{ data: BookmarkItem }> = (props) => {
   const [showing, setShowing] = createSignal(bookmark.url ? true : false)
   const [url, setUrl] = createSignal(bookmark.url)
 
-  IsLocal().then((result) => {
-    if (!result) return
-    setShowing(true)
-    if (props.data.urlLocal) setUrl(props.data.urlLocal)
-  })
+  if (props.data.urlLocal) {
+    IsLocal().then((result) => {
+      if (!result) return
+      setShowing(true)
+      setUrl(props.data.urlLocal)
+    })
+  }
 
   const showIcon = () => {
     if (bookmark.icon.endsWith(".svg")) {
