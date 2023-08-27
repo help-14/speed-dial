@@ -21,6 +21,9 @@ jobs:
       - name: Copy cloudflare functions
         run: cp -r functions/ ./dist/
 
+      - name: Copy assets
+        run: mkdir -p dist/src/assets/js/ && cp src/assets/js/skycons.min.js dist/src/assets/js/
+
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
