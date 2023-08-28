@@ -76,10 +76,10 @@
       document.querySelector("#weather-info").style.visibility = "visible";
     }
 
-    (function weatherTick() {
+    window.addEventListener("load", (event) => {
       loadWeather();
       setTimeout(weatherTick, 3600000);
-    })();
+    })
   </script>
 </body>
 
