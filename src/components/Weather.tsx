@@ -1,4 +1,5 @@
 import { type Component } from "solid-js"
+import { WebsiteData } from "../data"
 
 const Weather: Component = () => {
   return (
@@ -15,6 +16,12 @@ const Weather: Component = () => {
         <hr style="margin: 0px;" />
         <div id="humidity" class="row strong"></div>
       </div>
+      <input
+        id="longitude"
+        value={WebsiteData.longitude}
+        style="display: none"
+      />
+      <input id="latitude" value={WebsiteData.latitude} style="display: none" />
     </div>
   )
 }

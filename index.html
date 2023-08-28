@@ -28,7 +28,9 @@
   <script>
     async function loadWeather() {
       // Get info from api
-      const weather = await (await fetch("/weather?longitude=105.808534&latitude=21.042698")).json();
+      const longitude = document.querySelector('#longitude').value;
+      const latitude = document.querySelector('#latitude').value;
+      const weather = await (await fetch(`/weather?longitude=${longitude}&latitude=${latitude}`)).json();
       if (!weather) return;
       // Parse weather id
       let icon = null;
