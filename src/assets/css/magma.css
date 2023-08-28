@@ -10,6 +10,7 @@ body {
   position: fixed;
   margin-top: -5%;
   background-image: var(--bgImage);
+  background-repeat: no-repeat;
   transform: scale(1.2);
   filter: blur(0.2rem);
   opacity: 0.6;
