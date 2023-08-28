@@ -76,10 +76,7 @@
       document.querySelector("#weather-info").style.visibility = "visible";
     }
 
-    window.addEventListener("load", (event) => {
-      loadWeather();
-      setTimeout(weatherTick, 3600000);
-    })
+    setTimeout(() => loadWeather(), 50)
   </script>
 </body>
 
