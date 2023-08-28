@@ -9,7 +9,8 @@ body {
   height: 100%;
   position: fixed;
   margin-top: -5%;
-  background-image: var(--bgImage) no-repeat center center fixed;
+  background-image: var(--bgImage);
+  background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
