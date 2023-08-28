@@ -9,8 +9,11 @@ body {
   height: 100%;
   position: fixed;
   margin-top: -5%;
-  background-image: var(--bgImage);
-  background-repeat: no-repeat;
+  background-image: var(--bgImage) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   transform: scale(1.2);
   filter: blur(0.2rem);
   opacity: 0.6;
