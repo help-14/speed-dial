@@ -3,7 +3,7 @@ import { WebsiteData } from "../data"
 
 const Weather: Component = () => {
   return (
-    <div class="row">
+    <div class="row" style="animation: fadeIn 2s;">
       <div class="one-half column">
         <canvas id="weather-icon" width="50" height="50"></canvas>
       </div>
