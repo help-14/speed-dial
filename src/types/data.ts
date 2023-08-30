@@ -5,5 +5,6 @@ export type WebData = {
   localPingTimeout: number
   longitude: number
   latitude: number
+  showSearchBox: boolean
   groups: GroupItem[]
 }

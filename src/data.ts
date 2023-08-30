@@ -5,6 +5,7 @@ export const WebsiteData: WebData = {
   localPingTimeout: 300,
   longitude: 105.808534,
   latitude: 21.042698,
+  showSearchBox: false,
   groups: [
     {
       title: "Applications",
