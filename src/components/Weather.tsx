@@ -89,14 +89,14 @@ const Weather: Component = () => {
   }
 
   return (
-    <Show when={show()}>
-      <div
-        class="flex flex-row button p-5"
-        title="Click to refresh location"
-        data-tooltip-target="weather-tooltip"
-        data-tooltip-placement="bottom"
-        onclick={getLocation}
-      >
+    <div
+      class="flex flex-row button p-5"
+      title="Click to refresh location"
+      data-tooltip-target="weather-tooltip"
+      data-tooltip-placement="bottom"
+      onclick={getLocation}
+    >
+      <Show when={show()}>
         <div class="mr-5 my-auto">
           <canvas id="weather-icon" width="50" height="50"></canvas>
         </div>
@@ -105,122 +105,120 @@ const Weather: Component = () => {
           <hr class="my-1" />
           <div id="humidity text-center">{humidity()}</div>
         </div>
-        <input id="weatherCode" value={weatherCode()} type="hidden" />
-        <div
-          id="weather-tooltip"
-          role="tooltip"
-          class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white opacity-bg rounded-lg shadow-sm opacity-0 tooltip "
-        >
-          <div class="flex flex-col">
-            <div class="flex flex-row">
-              <div class="p-2 my-auto w-8" title="Location">
-                <i class="fa-solid fa-location-dot mx-auto"></i>
+      </Show>
+      <input id="weatherCode" value={weatherCode()} type="hidden" />
+      <div
+        id="weather-tooltip"
+        role="tooltip"
+        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white opacity-bg rounded-lg shadow-sm opacity-0 tooltip "
+      >
+        <div class="flex flex-col">
+          <div class="flex flex-row">
+            <div class="p-2 my-auto w-8" title="Location">
+              <i class="fa-solid fa-location-dot mx-auto"></i>
+            </div>
+            <div class="flex flex-col ml-2">
+              <div>
+                <span class="">Name:</span>
+                <span class="font-thin mx-2">{city()}</span>
               </div>
-              <div class="flex flex-col ml-2">
-                <div>
-                  <span class="">Name:</span>
-                  <span class="font-thin mx-2">{city()}</span>
-                </div>
-                <div>
-                  <span class="">Country:</span>
-                  <span class="font-thin mx-2">{weather()?.sys?.country}</span>
-                </div>
+              <div>
+                <span class="">Country:</span>
+                <span class="font-thin mx-2">{weather()?.sys?.country}</span>
               </div>
             </div>
-            <hr class="my-1 opacity-50" />
-            <div class="flex flex-row">
-              <div class="p-2 my-auto w-8" title="Temperature">
-                <i class="fa-solid fa-temperature-three-quarters mx-auto"></i>
+          </div>
+          <hr class="my-1 opacity-50" />
+          <div class="flex flex-row">
+            <div class="p-2 my-auto w-8" title="Temperature">
+              <i class="fa-solid fa-temperature-three-quarters mx-auto"></i>
+            </div>
+            <div class="flex flex-col ml-2">
+              <div>
+                <span class="">Temp:</span>
+                <span class="font-thin mx-2">{temp()}</span>
               </div>
-              <div class="flex flex-col ml-2">
-                <div>
-                  <span class="">Temp:</span>
-                  <span class="font-thin mx-2">{temp()}</span>
-                </div>
-                <div>
-                  <span class="">Feel like:</span>
-                  <span class="font-thin mx-2">
-                    {toCelsius(weather()?.main?.feels_like ?? 0)}
-                  </span>
-                </div>
-                <div>
-                  <span class="">Min:</span>
-                  <span class="font-thin mx-2">
-                    {toCelsius(weather()?.main?.temp_min ?? 0)}
-                  </span>
-                </div>
-                <div>
-                  <span class="">Max:</span>
-                  <span class="font-thin mx-2">
-                    {toCelsius(weather()?.main.temp_max ?? 0)}
-                  </span>
-                </div>
-                <div>
-                  <span class="">Humidity:</span>
-                  <span class="font-thin mx-2">{humidity()}</span>
-                </div>
+              <div>
+                <span class="">Feel like:</span>
+                <span class="font-thin mx-2">
+                  {toCelsius(weather()?.main?.feels_like ?? 0)}
+                </span>
+              </div>
+              <div>
+                <span class="">Min:</span>
+                <span class="font-thin mx-2">
+                  {toCelsius(weather()?.main?.temp_min ?? 0)}
+                </span>
+              </div>
+              <div>
+                <span class="">Max:</span>
+                <span class="font-thin mx-2">
+                  {toCelsius(weather()?.main.temp_max ?? 0)}
+                </span>
+              </div>
+              <div>
+                <span class="">Humidity:</span>
+                <span class="font-thin mx-2">{humidity()}</span>
               </div>
             </div>
-            <hr class="my-1 opacity-50" />
-            <div class="flex flex-row">
-              <div class="p-2 my-auto w-8" title="Wind">
-                <i class="fa-solid fa-wind mx-auto"></i>
+          </div>
+          <hr class="my-1 opacity-50" />
+          <div class="flex flex-row">
+            <div class="p-2 my-auto w-8" title="Wind">
+              <i class="fa-solid fa-wind mx-auto"></i>
+            </div>
+            <div class="flex flex-col ml-2">
+              <div>
+                <span class="">Speed:</span>
+                <span class="font-thin mx-2">
+                  {weather()?.wind.speed + "m/s"}
+                </span>
               </div>
-              <div class="flex flex-col ml-2">
-                <div>
-                  <span class="">Speed:</span>
-                  <span class="font-thin mx-2">
-                    {weather()?.wind.speed + "m/s"}
-                  </span>
-                </div>
-                <div>
-                  <span class="">Degree:</span>
-                  <span class="font-thin mx-2">{weather()?.wind.deg}</span>
-                </div>
+              <div>
+                <span class="">Degree:</span>
+                <span class="font-thin mx-2">{weather()?.wind.deg}</span>
               </div>
             </div>
-            <hr class="my-1 opacity-50" />
-            <div class="flex flex-row">
-              <div class="p-2 my-auto w-8" title="Sky">
-                <i class="fa-solid fa-cloud mx-auto"></i>
+          </div>
+          <hr class="my-1 opacity-50" />
+          <div class="flex flex-row">
+            <div class="p-2 my-auto w-8" title="Sky">
+              <i class="fa-solid fa-cloud mx-auto"></i>
+            </div>
+            <div class="flex flex-col ml-2">
+              <div>
+                <span class="">Sky:</span>
+                <span class="font-thin mx-2">{weather()?.weather[0].main}</span>
               </div>
-              <div class="flex flex-col ml-2">
-                <div>
-                  <span class="">Sky:</span>
-                  <span class="font-thin mx-2">
-                    {weather()?.weather[0].main}
-                  </span>
-                </div>
-                <div>
-                  <span class="">Visibility:</span>
-                  <span class="font-thin mx-2">{visibility()}</span>
-                </div>
+              <div>
+                <span class="">Visibility:</span>
+                <span class="font-thin mx-2">{visibility()}</span>
               </div>
             </div>
-            <hr class="my-1 opacity-50" />
-            <div class="flex flex-row">
-              <div class="p-2 my-auto w-8" title="Sun">
-                <i class="fa-solid fa-sun mx-auto"></i>
+          </div>
+          <hr class="my-1 opacity-50" />
+          <div class="flex flex-row">
+            <div class="p-2 my-auto w-8" title="Sun">
+              <i class="fa-solid fa-sun mx-auto"></i>
+            </div>
+            <div class="flex flex-col ml-2">
+              <div>
+                <span class="">Sunrise:</span>
+                <span class="font-thin mx-2">
+                  {formatHour(weather()?.sys.sunrise ?? 0)}
+                </span>
               </div>
-              <div class="flex flex-col ml-2">
-                <div>
-                  <span class="">Sunrise:</span>
-                  <span class="font-thin mx-2">
-                    {formatHour(weather()?.sys.sunrise ?? 0)}
-                  </span>
-                </div>
-                <div>
-                  <span class="">Sunset:</span>
-                  <span class="font-thin mx-2">
-                    {formatHour(weather()?.sys.sunset ?? 0)}
-                  </span>
-                </div>
+              <div>
+                <span class="">Sunset:</span>
+                <span class="font-thin mx-2">
+                  {formatHour(weather()?.sys.sunset ?? 0)}
+                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </Show>
+    </div>
   )
 }
 
