@@ -105,8 +105,8 @@ const Weather: Component = () => {
           <hr class="my-1" />
           <div id="humidity text-center">{humidity()}</div>
         </div>
+        <input id="weatherCode" value={weatherCode()} type="hidden" />
       </Show>
-      <input id="weatherCode" value={weatherCode()} type="hidden" />
       <div
         id="weather-tooltip"
         role="tooltip"
