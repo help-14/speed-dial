@@ -14,7 +14,7 @@ const App: Component = () => {
           <SearchBox />
         </Show>
       </div>
-      <div id="header" class="flex flex-row pt-10">
+      <div id="header" class="flex flex-row pt-10 pb-2">
         <div class="grow">
           <Timer />
         </div>
