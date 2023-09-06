@@ -90,7 +90,7 @@ const Weather: Component = () => {
 
   return (
     <div
-      class="flex flex-row button p-5"
+      class="flex flex-row button p-3"
       title="Click to refresh location"
       data-tooltip-target="weather-tooltip"
       data-tooltip-placement="bottom"
