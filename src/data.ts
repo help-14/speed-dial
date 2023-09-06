@@ -94,6 +94,7 @@ export const WebsiteData: WebData = {
               title: "Snibox",
               icon: "fa-regular fa-note-sticky",
               url: "https://snibox.nhan.pt/",
+              urlLocal: "http://10.0.0.240:8000"
             },
           ],
         },
