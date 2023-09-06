@@ -14,11 +14,11 @@ const App: Component = () => {
           <SearchBox />
         </Show>
       </div>
-      <div id="header" class="flex flex-row mt-10">
+      <div id="header" class="flex flex-row pt-10">
         <div class="grow">
           <Timer />
         </div>
-        <div id="header-right" class="my-auto p-5 pr-10">
+        <div id="header-right" class="my-auto pl-5 lt-5 pr-10">
           <Weather />
         </div>
       </div>
