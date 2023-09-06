@@ -42,13 +42,8 @@ body {
   float: right;
 }
 
-.group-title {
-  margin-top: 5%;
-}
-
 .group-items a {
   padding: 15px !important;
-  margin-top: 10px !important;
   margin-bottom: 0 !important;
   border-radius: 0.7rem !important;
   align-items: center !important;
@@ -90,15 +85,23 @@ body {
   height: 32px !important;
 }
 
-.group-items a:hover {
+.button {
+  border-radius: 0.7rem !important;
+}
+
+.button:hover {
   background-color: rgba(0, 0, 0, 0.3) !important;
   cursor: pointer;
 }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-  .group-items a:hover {
+  .button:hover {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     background-color: rgba(0, 0, 0, 0.3) !important;
   }
+}
+
+.opacity-bg {
+  background-color: var(--bgColor) !important;
 }

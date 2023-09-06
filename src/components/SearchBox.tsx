@@ -11,16 +11,15 @@ const SearchBox: Component = () => {
   }
 
   return (
-    <div>
+    <div class="mb-5">
       <input
         ref={searchBox}
         type="text"
         placeholder="🔍 type something to search..."
         onKeyDown={(e) => onPress(e.key)}
         value=""
+        class="border-transparent border-0 bg-transparent p-1 !outline-none"
         style={{
-          "background-color": "transparent",
-          "border-width": "0",
           "border-bottom": "1px solid white",
           "border-radius": "0",
           width: "100%",

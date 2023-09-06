@@ -31,11 +31,13 @@ const Timer: Component = () => {
   }
 
   return (
-    <div class="two-thirds column">
-      <h5 id="clock">{clock()}</h5>
-      <h1 id="greeting" class="strong">
+    <div class="flex flex-col">
+      <span id="clock" class="text-2xl font-thin">
+        {clock()}
+      </span>
+      <span id="greeting" class="font-bold text-5xl mt-4">
         {greeting()}
-      </h1>
+      </span>
     </div>
   )
 }

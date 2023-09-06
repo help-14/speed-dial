@@ -29,7 +29,7 @@ const Bookmark: Component<{ data: BookmarkItem }> = (props) => {
 
   return (
     <Show when={showing()}>
-      <a href={url()}>
+      <a href={url()} class="button">
         <div class="icon-container">{showIcon()}</div>
         <h6>{bookmark.title}</h6>
       </a>

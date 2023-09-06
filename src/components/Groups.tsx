@@ -5,18 +5,16 @@ import { BookmarkItem } from "../types/bookmark"
 
 const Groups: Component<{ data: GroupItem[] }> = (props) => {
   return (
-    <div id="content" class="column twelve">
+    <div id="content" class="flex flex-col">
       <For each={props.data}>
         {(group) => (
-          <div>
-            <div class="row group-title">
-              <h4 class="strong">{group.title}</h4>
-            </div>
-            <div class="row">
+          <div class="flex flex-col">
+            <span class="font-bold text-3xl mt-10 mb-5">{group.title}</span>
+            <div class="grid grid-cols-4 gap-2">
               <For each={group.data}>
                 {(col) => (
-                  <div class="three columns group-items">
-                    <h6 class="accent">{col.title}</h6>
+                  <div class="group-items flex flex-col gap-2">
+                    <span class="accent">{col.title}</span>
                     <For each={(col as GroupItem).data}>
                       {(bm) => <Bookmark data={bm as BookmarkItem} />}
                     </For>
