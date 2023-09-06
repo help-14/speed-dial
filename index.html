@@ -63,10 +63,16 @@
       skycons.add("weather-icon", icon);
       skycons.play();
     }
-    addEventListener("load", (event) => {
-      document.querySelector('#weatherCode').addEventListener("change", loadWeather);
-      loadWeather();
-    });
+    function addEvent() {
+      const element = document.querySelector('#weatherCode')
+      if (!element) {
+        setTimeout(addEvent, 10)
+        return
+      }
+      element.addEventListener("change", loadWeather)
+      loadWeather()
+    }
+    addEventListener("load", addEvent);
   </script>
 </body>
 
