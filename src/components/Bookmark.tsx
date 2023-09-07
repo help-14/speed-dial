@@ -1,6 +1,6 @@
 import { createSignal, type Component, Show } from "solid-js"
 import { BookmarkItem } from "../types/bookmark"
-import { IsLocal } from "./Local"
+import { IsLocal } from "../utils/ping"
 
 const Bookmark: Component<{ data: BookmarkItem }> = (props) => {
   const bookmark = props.data
