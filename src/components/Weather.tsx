@@ -217,6 +217,7 @@ const Weather: Component = () => {
             </div>
           </div>
         </div>
+        <div class="tooltip-arrow" data-popper-arrow></div>
       </div>
     </div>
   )
