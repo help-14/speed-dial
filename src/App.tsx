@@ -8,7 +8,7 @@ import "flowbite"
 
 const App: Component = () => {
   return (
-    <div id="main" class="container mx-auto flex flex-col max-w-5xl">
+    <div id="main" class="container px-5 mx-auto flex flex-col max-w-5xl">
       <div class="mt-10">
         <Show when={WebsiteData.showSearchBox}>
           <SearchBox />

@@ -32,10 +32,10 @@ const Timer: Component = () => {
 
   return (
     <div class="flex flex-col">
-      <span id="clock" class="text-2xl font-thin">
+      <span id="clock" class="text-xl md:text-2xl font-thin">
         {clock()}
       </span>
-      <span id="greeting" class="font-bold text-5xl mt-4">
+      <span id="greeting" class="font-bold text-4xl md:text-5xl mt-4">
         {greeting()}
       </span>
     </div>
