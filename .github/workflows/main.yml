@@ -22,7 +22,7 @@ jobs:
         run: cp -r functions/ ./dist/
 
       - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+        uses: crazy-max/ghaction-github-pages@v4
         with:
           build_dir: dist
         env:
