@@ -262,7 +262,12 @@ const Weather: Component = () => {
       onclick={getLocation}
     >
       <div class="mr-3 my-auto">
-        <img src={getWeatherIcon(weatherCode())} alt="logo" width="60" />
+        <img
+          src={getWeatherIcon(weatherCode())}
+          alt="logo"
+          width="60"
+          height="60"
+        />
       </div>
       <div id="weather-info" class="flex flex-col" style="ml-2 my-auto">
         <div id="temp text-center">{temp()}</div>
