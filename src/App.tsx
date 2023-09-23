@@ -18,7 +18,7 @@ const App: Component = () => {
         <div class="grow">
           <Timer />
         </div>
-        <div id="header-right" class="my-auto pl-5 pr-10">
+        <div id="header-right" class="my-auto pl-5 pr-5">
           <Suspense>
             <Weather />
           </Suspense>

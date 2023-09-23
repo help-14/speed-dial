@@ -255,7 +255,7 @@ const Weather: Component = () => {
 
   return (
     <div
-      class="flex flex-row button p-3"
+      class="hidden md:flex flex-row button p-3"
       title="Click to refresh location"
       data-tooltip-target="weather-tooltip"
       data-tooltip-placement="bottom"
@@ -265,11 +265,11 @@ const Weather: Component = () => {
         <img
           src={getWeatherIcon(weatherCode())}
           alt="logo"
-          width="60"
-          height="60"
+          width="60px"
+          height="60px"
         />
       </div>
-      <div id="weather-info" class="flex flex-col" style="ml-2 my-auto">
+      <div id="weather-info" class="flex-col ml-2 my-auto flex">
         <div id="temp text-center">{temp()}</div>
         <hr class="my-1" />
         <div id="humidity text-center">{humidity()}</div>
