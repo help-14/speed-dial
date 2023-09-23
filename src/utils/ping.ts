@@ -21,9 +21,7 @@ function ping(ip: string, timeout: number): Promise<boolean> {
 }
 
 export const IsLocal = async (): Promise<boolean> => {
-  console.log("check local")
   if (!checked) {
-    console.log("pinging...")
     if (await ping(WebsiteData.localPingUrl, WebsiteData.localPingTimeout)) {
       isLocalNetwork = true
     }
