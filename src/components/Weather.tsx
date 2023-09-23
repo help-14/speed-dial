@@ -261,10 +261,10 @@ const Weather: Component = () => {
       data-tooltip-placement="bottom"
       onclick={getLocation}
     >
-      <div class="mr-5 my-auto">
+      <div class="mr-3 my-auto">
         <img src={getWeatherIcon(weatherCode())} alt="logo" width="60" />
       </div>
-      <div id="weather-info" class="flex flex-col" style="ml-3 my-auto">
+      <div id="weather-info" class="flex flex-col" style="ml-2 my-auto">
         <div id="temp text-center">{temp()}</div>
         <hr class="my-1" />
         <div id="humidity text-center">{humidity()}</div>
