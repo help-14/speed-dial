@@ -14,13 +14,16 @@ function ping(ip: string, timeout: number): Promise<boolean> {
     }
     img.src = "https://" + ip
     setTimeout(function () {
+      img.src = ""
       resolve(false)
     }, timeout)
   })
 }
 
 export const IsLocal = async (): Promise<boolean> => {
+  console.log("check local")
   if (!checked) {
+    console.log("pinging...")
     if (await ping(WebsiteData.localPingUrl, WebsiteData.localPingTimeout)) {
       isLocalNetwork = true
     }
