@@ -1,4 +1,4 @@
-import { Show, type Component } from "solid-js"
+import { Show, type Component, Suspense } from "solid-js"
 import { WebsiteData } from "./data"
 import Groups from "./components/Groups"
 import Timer from "./components/Timer"
@@ -19,7 +19,9 @@ const App: Component = () => {
           <Timer />
         </div>
         <div id="header-right" class="my-auto pl-5 pr-10">
-          <Weather />
+          <Suspense>
+            <Weather />
+          </Suspense>
         </div>
       </div>
       <div class="">
