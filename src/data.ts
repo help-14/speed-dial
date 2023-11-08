@@ -53,6 +53,12 @@ export const WebsiteData: WebData = {
               icon: "https://help-14.github.io/files/icons/utorrent.svg",
               url: "http://10.0.0.242:10008/",
             },
+            {
+              title: "Snibox",
+              icon: "fa-regular fa-note-sticky",
+              url: "https://snibox.nhan.pt/",
+              urlLocal: "http://10.0.0.240:8000"
+            },
           ],
         },
         {
@@ -91,10 +97,9 @@ export const WebsiteData: WebData = {
               url: "https://www.svgviewer.dev/",
             },
             {
-              title: "Snibox",
-              icon: "fa-regular fa-note-sticky",
-              url: "https://snibox.nhan.pt/",
-              urlLocal: "http://10.0.0.240:8000"
+              title: "iHost",
+              icon: "https://help-14.github.io/files/icons/matter.svg",
+              url: "http://ihost.local/",
             },
           ],
         },
