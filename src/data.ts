@@ -41,7 +41,7 @@ export const WebsiteData: WebData = {
             {
               title: "Camera",
               icon: "fa-solid fa-video",
-              url: "http://10.0.0.242:30058/",
+              url: "http://10.0.0.242:30058/cameras/door",
             },
             {
               title: "jDownloader",
