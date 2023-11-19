@@ -39,9 +39,9 @@ export const WebsiteData: WebData = {
           title: "Nas",
           data: [
             {
-              title: "Kerberos",
+              title: "Camera",
               icon: "fa-solid fa-video",
-              url: "http://10.0.0.242:10004",
+              url: "http://10.0.0.242:30058/",
             },
             {
               title: "jDownloader",
@@ -53,12 +53,12 @@ export const WebsiteData: WebData = {
               icon: "https://help-14.github.io/files/icons/utorrent.svg",
               url: "http://10.0.0.242:10008/",
             },
-            {
-              title: "Snibox",
-              icon: "fa-regular fa-note-sticky",
-              url: "https://snibox.nhan.pt/",
-              urlLocal: "http://10.0.0.240:8000"
-            },
+            // {
+            //   title: "Snibox",
+            //   icon: "fa-regular fa-note-sticky",
+            //   url: "https://snibox.nhan.pt/",
+            //   urlLocal: "http://10.0.0.240:8000",
+            // },
           ],
         },
         {
