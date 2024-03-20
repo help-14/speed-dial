@@ -68,7 +68,7 @@ export const WebsiteData: WebData = {
               title: "Jellyfin",
               icon: "https://help-14.github.io/files/icons/jellyfin.svg",
               url: "https://phim.nhan.pt",
-              urlLocal: "http://10.0.0.241:8097",
+              urlLocal: "http://10.0.0.241:8096",
             },
             // {
             //   title: "Tdarr",
