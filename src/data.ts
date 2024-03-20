@@ -19,9 +19,9 @@ export const WebsiteData: WebData = {
               url: "http://10.0.0.1/",
             },
             {
-              title: "True NAS",
+              title: "Zimaboard",
               icon: "fa-solid fa-server",
-              url: "http://10.0.0.242/",
+              url: "http://10.0.0.241",
             },
             {
               title: "Cloudflare",
@@ -29,10 +29,10 @@ export const WebsiteData: WebData = {
               url: "https://dash.cloudflare.com",
             },
             {
-              title: "Adguard",
-              icon: "https://help-14.github.io/files/icons/adguard.svg",
-              url: "http://10.0.0.238/",
-            },
+              title: "iHost",
+              icon: "https://help-14.github.io/files/icons/matter.svg",
+              url: "http://ihost.local/",
+            }
           ],
         },
         {
@@ -46,13 +46,13 @@ export const WebsiteData: WebData = {
             {
               title: "jDownloader",
               icon: "fa-solid fa-cloud-arrow-down",
-              url: "http://10.0.0.242:10003/",
+              url: "http://10.0.0.241:5800/",
             },
-            {
-              title: "Torrent",
-              icon: "https://help-14.github.io/files/icons/utorrent.svg",
-              url: "http://10.0.0.242:10008/",
-            },
+            // {
+            //   title: "Torrent",
+            //   icon: "https://help-14.github.io/files/icons/utorrent.svg",
+            //   url: "http://10.0.0.242:10008/",
+            // },
             // {
             //   title: "Snibox",
             //   icon: "fa-regular fa-note-sticky",
@@ -68,38 +68,33 @@ export const WebsiteData: WebData = {
               title: "Jellyfin",
               icon: "https://help-14.github.io/files/icons/jellyfin.svg",
               url: "https://phim.nhan.pt",
-              urlLocal: "http://10.0.0.242:10001/",
+              urlLocal: "http://10.0.0.241:8097",
             },
-            {
-              title: "Tdarr",
-              icon: "https://help-14.github.io/files/icons/tdarr.svg",
-              url: "http://10.0.0.242:10007/",
-            },
-            {
-              title: "Music",
-              icon: "fa-solid fa-music",
-              url: "https://music.nhan.pt",
-              urlLocal: "http://10.0.0.242:10006/",
-            },
+            // {
+            //   title: "Tdarr",
+            //   icon: "https://help-14.github.io/files/icons/tdarr.svg",
+            //   url: "http://10.0.0.242:10007/",
+            // },
+            // {
+            //   title: "Music",
+            //   icon: "fa-solid fa-music",
+            //   url: "https://music.nhan.pt",
+            //   urlLocal: "http://10.0.0.242:10006/",
+            // },
           ],
         },
         {
           title: "Tools",
           data: [
-            {
-              title: "Cups",
-              icon: "fa-solid fa-print",
-              urlLocal: "https://10.0.0.240:631/admin/",
-            },
+            // {
+            //   title: "Cups",
+            //   icon: "fa-solid fa-print",
+            //   urlLocal: "https://10.0.0.240:631/admin/",
+            // },
             {
               title: "SVG viewer",
               icon: "fa-solid fa-vector-square",
               url: "https://www.svgviewer.dev/",
-            },
-            {
-              title: "iHost",
-              icon: "https://help-14.github.io/files/icons/matter.svg",
-              url: "http://ihost.local/",
             },
           ],
         },
