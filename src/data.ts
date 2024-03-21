@@ -19,11 +19,6 @@ export const WebsiteData: WebData = {
               url: "http://10.0.0.1/",
             },
             {
-              title: "Zimaboard",
-              icon: "fa-solid fa-server",
-              url: "http://10.0.0.241",
-            },
-            {
               title: "Cloudflare",
               icon: "https://help-14.github.io/files/icons/cloudflare.svg",
               url: "https://dash.cloudflare.com",
@@ -39,15 +34,20 @@ export const WebsiteData: WebData = {
           title: "Nas",
           data: [
             {
-              title: "Camera",
-              icon: "fa-solid fa-video",
-              url: "http://10.0.0.242:30058/cameras/door",
+              title: "Zimaboard",
+              icon: "fa-solid fa-server",
+              url: "http://10.0.0.241",
             },
             {
               title: "jDownloader",
               icon: "fa-solid fa-cloud-arrow-down",
               url: "http://10.0.0.241:5800/",
             },
+            // {
+            //   title: "Camera",
+            //   icon: "fa-solid fa-video",
+            //   url: "http://10.0.0.242:30058/cameras/door",
+            // },
             // {
             //   title: "Torrent",
             //   icon: "https://help-14.github.io/files/icons/utorrent.svg",
