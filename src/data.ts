@@ -48,11 +48,11 @@ export const WebsiteData: WebData = {
             //   icon: "fa-solid fa-video",
             //   url: "http://10.0.0.242:30058/cameras/door",
             // },
-            // {
-            //   title: "Torrent",
-            //   icon: "https://help-14.github.io/files/icons/utorrent.svg",
-            //   url: "http://10.0.0.242:10008/",
-            // },
+            {
+              title: "Torrent",
+              icon: "https://help-14.github.io/files/icons/utorrent.svg",
+              url: "http://10.0.0.241:8181/",
+            },
             // {
             //   title: "Snibox",
             //   icon: "fa-regular fa-note-sticky",
