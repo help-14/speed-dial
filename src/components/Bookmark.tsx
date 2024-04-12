@@ -16,7 +16,7 @@ const Bookmark: Component<{ data: BookmarkItem }> = (props) => {
   }
 
   const showIcon = () => {
-    if (bookmark.icon.endsWith(".svg")) {
+    if (bookmark.icon.endsWith(".svg") || bookmark.icon.startsWith("data:image/svg+xml")) {
       return <img src={bookmark.icon} class="svg-icon" />
     } else if (
       /\.jpg|\.jpeg|\.png|\.gif|\.apng|\.bmp|\.ico|\.webp"/.test(bookmark.icon)
