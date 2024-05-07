@@ -27,6 +27,7 @@ export const WebsiteData: WebData = {
               title: "iHost",
               icon: "https://help-14.github.io/files/icons/matter.svg",
               url: "http://ihost.local/",
+              urlLocal: "http://10.0.0.243:8888/"
             }
           ],
         },
