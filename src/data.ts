@@ -1,7 +1,7 @@
 import { WebData } from "./types/data"
 
 export const WebsiteData: WebData = {
-  localPingUrl: "10.0.0.1",
+  localPingUrl: "192.168.4.1",
   localPingTimeout: 300,
   longitude: 105.808534,
   latitude: 21.042698,
