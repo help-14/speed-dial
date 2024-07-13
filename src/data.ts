@@ -37,11 +37,13 @@ export const WebsiteData: WebData = {
             {
               title: "Zimaboard",
               icon: "fa-solid fa-server",
+              urllocal: "http://zima.local",
               url: "http://10.0.0.241",
             },
             {
               title: "jDownloader",
               icon: "fa-solid fa-cloud-arrow-down",
+              urllocal: "http://zima.local:5800",
               url: "http://10.0.0.241:5800/",
             },
             // {
@@ -52,14 +54,9 @@ export const WebsiteData: WebData = {
             {
               title: "Torrent",
               icon: "https://help-14.github.io/files/icons/utorrent.svg",
+              urllocal: "http://zima.local:8181",
               url: "http://10.0.0.241:8181/",
             },
-            // {
-            //   title: "Snibox",
-            //   icon: "fa-regular fa-note-sticky",
-            //   url: "https://snibox.nhan.pt/",
-            //   urlLocal: "http://10.0.0.240:8000",
-            // },
           ],
         },
         {
@@ -69,7 +66,7 @@ export const WebsiteData: WebData = {
               title: "Jellyfin",
               icon: "https://help-14.github.io/files/icons/jellyfin.svg",
               url: "https://phim.nhan.pt",
-              urlLocal: "http://10.0.0.241:8097",
+              urlLocal: "http://zima.local:8097",
             },
             // {
             //   title: "Tdarr",
