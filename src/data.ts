@@ -19,15 +19,21 @@ export const WebsiteData: WebData = {
               url: "http://10.0.0.1/",
             },
             {
-              title: "Cloudflare",
-              icon: "https://help-14.github.io/files/icons/cloudflare.svg",
-              url: "https://dash.cloudflare.com",
+              title: "UniFi",
+              icon: "fa-solid fa-u",
+              url: "http://192.168.1.1/",
             },
             {
               title: "iHost",
               icon: "https://help-14.github.io/files/icons/matter.svg",
               urlLocal: "http://ihost.local/",
               url: "http://10.0.0.243:8888/"
+            },
+            {
+              title: "Zimaboard",
+              icon: "fa-solid fa-server",
+              urlLocal: "http://zima.local",
+              url: "http://10.0.0.241",
             }
           ],
         },
@@ -35,38 +41,37 @@ export const WebsiteData: WebData = {
           title: "Nas",
           data: [
             {
-              title: "Zimaboard",
-              icon: "fa-solid fa-server",
-              urlLocal: "http://zima.local",
-              url: "http://10.0.0.241",
-            },
-            {
               title: "jDownloader",
               icon: "fa-solid fa-cloud-arrow-down",
               urlLocal: "http://zima.local:5800",
               url: "http://10.0.0.241:5800/",
             },
-            // {
-            //   title: "Camera",
-            //   icon: "fa-solid fa-video",
-            //   url: "http://10.0.0.242:30058/cameras/door",
-            // },
             {
               title: "Torrent",
               icon: "https://help-14.github.io/files/icons/utorrent.svg",
               urlLocal: "http://zima.local:8181",
               url: "http://10.0.0.241:8181/",
             },
-          ],
-        },
-        {
-          title: "Media",
-          data: [
             {
               title: "Jellyfin",
               icon: "https://help-14.github.io/files/icons/jellyfin.svg",
               url: "https://phim.nhan.pt",
               urlLocal: "http://zima.local:8097",
+            },
+            // {
+            //   title: "Camera",
+            //   icon: "fa-solid fa-video",
+            //   url: "http://10.0.0.242:30058/cameras/door",
+            // },
+          ],
+        },
+        {
+          title: "Service",
+          data: [
+            {
+              title: "Cloudflare",
+              icon: "https://help-14.github.io/files/icons/cloudflare.svg",
+              url: "https://dash.cloudflare.com",
             },
             // {
             //   title: "Tdarr",
