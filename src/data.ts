@@ -1,7 +1,7 @@
 import { WebData } from "./types/data"
 
 export const WebsiteData: WebData = {
-  localPingUrl: "192.168.1.1",
+  localPingUrl: "10.0.0.1",
   localPingTimeout: 300,
   longitude: 105.808534,
   latitude: 21.042698,
@@ -26,14 +26,12 @@ export const WebsiteData: WebData = {
             {
               title: "iHost",
               icon: "https://help-14.github.io/files/icons/matter.svg",
-              urlLocal: "http://ihost.local/",
-              url: "http://10.0.0.243:8888/"
+              url: "http://ihost.local/",
             },
             {
               title: "Zimaboard",
               icon: "fa-solid fa-server",
-              urlLocal: "http://zima.local",
-              url: "http://10.0.0.241",
+              url: "http://zima.local",
             }
           ],
         },
@@ -43,14 +41,12 @@ export const WebsiteData: WebData = {
             {
               title: "jDownloader",
               icon: "fa-solid fa-cloud-arrow-down",
-              urlLocal: "http://zima.local:5800",
-              url: "http://10.0.0.241:5800/",
+              url: "http://zima.local:5800",
             },
             {
               title: "Torrent",
               icon: "https://help-14.github.io/files/icons/utorrent.svg",
-              urlLocal: "http://zima.local:8181",
-              url: "http://10.0.0.241:8181/",
+              url: "http://zima.local:8181",
             },
             {
               title: "Jellyfin",
