@@ -53,11 +53,6 @@ export const WebsiteData: WebData = {
               icon: "https://help-14.github.io/files/icons/jellyfin.svg",
               url: "https://phim.nhan.pt",
               urlLocal: "http://zima.local:8097",
-            },
-            {
-              title: "Maps",
-              icon: "fa-solid fa-map",
-              url: "https://www.google.com/maps",
             }
           ],
         },
@@ -74,12 +69,11 @@ export const WebsiteData: WebData = {
               icon: "fa-brands fa-github-alt",
               url: "https://github.com",
             },
-            // {
-            //   title: "Music",
-            //   icon: "fa-solid fa-music",
-            //   url: "https://music.nhan.pt",
-            //   urlLocal: "http://10.0.0.242:10006/",
-            // },
+            {
+              title: "Maps",
+              icon: "fa-solid fa-map",
+              url: "https://www.google.com/maps",
+            }
           ],
         },
         {
