@@ -85,15 +85,15 @@ export const WebsiteData: WebData = {
         {
           title: "Tools",
           data: [
-            // {
-            //   title: "Cups",
-            //   icon: "fa-solid fa-print",
-            //   urlLocal: "https://10.0.0.240:631/admin/",
-            // },
+            {
+              title: "Color",
+              icon: "fa-solid fa-palette",
+              url: "https://htmlcolorcodes.com",
+            },
             {
               title: "SVG viewer",
               icon: "fa-solid fa-vector-square",
-              url: "https://www.svgviewer.dev/",
+              url: "https://www.svgviewer.dev",
             },
           ],
         },
@@ -164,6 +164,21 @@ export const WebsiteData: WebData = {
               title: "FireAnt",
               icon: "fa-solid fa-arrow-trend-up",
               url: "https://fireant.vn/dashboard",
+            },
+          ],
+        },
+        {
+          title: "Games",
+          data: [
+            {
+              title: "Steam",
+              icon: "fa-brands fa-steam",
+              url: "https://store.steampowered.com",
+            },
+            {
+              title: "Epic Games",
+              icon: "https://help-14.github.io/files/icons/epic.svg",
+              url: "https://store.epicgames.com",
             },
           ],
         },
