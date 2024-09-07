@@ -71,7 +71,7 @@ export const WebsiteData: WebData = {
             },
             {
               title: "Maps",
-              icon: "fa-solid fa-map",
+              icon: "fa-solid fa-location-dot",
               url: "https://www.google.com/maps",
             },
           ],
