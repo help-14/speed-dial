@@ -1,6 +1,6 @@
 :root {
-  --bgColor: #2d3436;
-  --bgImage: url("/src/assets/bg.webp");
-  --accentColor: #FFA500;
-  --foreground: #ffffff;
+  --bgColor: #282828;
+  --bgImage: url("/src/assets/bg.jpg");
+  --accentColor: #fabd2f;
+  --foreground: #ebdbb2;
 }
