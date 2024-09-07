@@ -16,8 +16,20 @@ const Bookmark: Component<{ data: BookmarkItem }> = (props) => {
   }
 
   const showIcon = () => {
-    if (bookmark.icon.endsWith(".svg") || bookmark.icon.startsWith("data:image/svg+xml")) {
-      return <img src={bookmark.icon} class="svg-icon" />
+    if (
+      bookmark.icon.endsWith(".svg") ||
+      bookmark.icon.startsWith("data:image/svg+xml")
+    ) {
+      let svgMask = `url(${bookmark.icon}) no-repeat center / contain`
+      return (
+        <div
+          class="svg-icon"
+          style={{
+            mask: svgMask,
+            "-webkit-mask": svgMask,
+          }}
+        ></div>
+      )
     } else if (
       /\.jpg|\.jpeg|\.png|\.gif|\.apng|\.bmp|\.ico|\.webp"/.test(bookmark.icon)
     ) {

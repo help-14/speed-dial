@@ -86,7 +86,7 @@ export const WebsiteData: WebData = {
             },
             {
               title: "SVG viewer",
-              icon: "fa-solid fa-vector-square",
+              icon: "https://help-14.github.io/files/icons/svg-viewer.svg",
               url: "https://www.svgviewer.dev",
             },
           ],

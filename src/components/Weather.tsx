@@ -62,7 +62,6 @@ const Weather: Component = () => {
       switch (weatherCode) {
         case 200:
         case 210:
-        case 211:
         case 201:
         case 202:
           return isDay ? thunderstormsDayRain : thunderstormsNightRain
