@@ -89,7 +89,7 @@ export async function onRequest({ request, env }) {
     }
 
     await env.API.put(storageKey, JSON.stringify({
-      expireAt: currentTime + 10 * 60000,
+      expireAt: currentTime + 5 * 60000,
       data: response
     }))
   } else if (liveInfo?.data) {
