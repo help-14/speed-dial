@@ -19,33 +19,33 @@ const fetchLiveStream = async (channelID) => {
       `https://youtube.com/channel/${channelID}/live`
     )
     let text = await response.text()
-    if (text.includes('rel="canonical"')) {
-      text = text.substring(text.indexOf('rel="canonical"'))
+    text = text.substring(text.indexOf('rel="canonical"'))
 
-      const uStart = text.indexOf('href="') + 6
-      const uEnd = text.indexOf('>') - 1
-      let canonicalURL = text.substring(uStart, uEnd)
+    const uStart = text.indexOf('href="') + 6
+    const uEnd = text.indexOf('>') - 1
+    let canonicalURL = text.substring(uStart, uEnd)
+    const isLive = canonicalURL.includes("?v=")
+    if (!isLive) return null
 
-      const tStart = text.indexOf('<title>') + 7
-      const tEnd = text.indexOf('</title>')
-      let title = text.substring(tStart, tEnd)
-      if (title.includes("-")) {
-        title = title.substring(0, title.lastIndexOf("-"))
-      }
-      title = title
-        .replaceAll('\n', '')
-        .replaceAll('\r', '')
-        .replaceAll('\t', '')
-        .replaceAll('  ', ' ')
-        .replaceAll('  ', ' ')
-        .replaceAll('  ', ' ')
-        .replaceAll('  ', ' ')
-        .trim()
+    const tStart = text.indexOf('<title>') + 7
+    const tEnd = text.indexOf('</title>')
+    let title = text.substring(tStart, tEnd)
+    if (title.includes("-")) {
+      title = title.substring(0, title.lastIndexOf("-"))
+    }
+    title = title
+      .replaceAll('\n', '')
+      .replaceAll('\r', '')
+      .replaceAll('\t', '')
+      .replaceAll('  ', ' ')
+      .replaceAll('  ', ' ')
+      .replaceAll('  ', ' ')
+      .replaceAll('  ', ' ')
+      .trim()
 
-      return {
-        title: title,
-        url: canonicalURL,
-      }
+    return {
+      title: title,
+      url: canonicalURL,
     }
   } catch {
   }
