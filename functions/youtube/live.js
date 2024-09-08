@@ -32,7 +32,15 @@ const fetchLiveStream = async (channelID) => {
       if (title.includes("-")) {
         title = title.substring(0, title.lastIndexOf("-"))
       }
-      title = title.trim()
+      title = title
+        .replaceAll('\n', '')
+        .replaceAll('\r', '')
+        .replaceAll('\t', '')
+        .replaceAll('  ', ' ')
+        .replaceAll('  ', ' ')
+        .replaceAll('  ', ' ')
+        .replaceAll('  ', ' ')
+        .trim()
 
       return {
         title: title,
