@@ -1,4 +1,10 @@
-import { createSignal, type Component, Show, createResource } from "solid-js"
+import {
+  createSignal,
+  type Component,
+  Show,
+  createResource,
+  onMount,
+} from "solid-js"
 import { WeatherApi } from "../types/weather"
 import { coordsSettings } from "../utils/settings"
 
@@ -254,10 +260,9 @@ const Weather: Component = () => {
 
   return (
     <div
+      id="weather-button"
       class="hidden md:flex flex-row button p-3"
       title="Click to refresh location"
-      data-tooltip-target="weather-tooltip"
-      data-tooltip-placement="bottom"
       onclick={getLocation}
     >
       <div class="mr-3 my-auto">
