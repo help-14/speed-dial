@@ -7,7 +7,7 @@ export async function onRequest({ request, env }) {
     if (!longitude || !latitude) return new Response("Unknown location")
     const storageKey = `weather-${longitude}-${latitude}`
 
-    const rawData = await env.API.get(storageKey);
+    const rawData = await env.API.get(storageKey)
     const weatherInfo = JSON.parse(rawData)
     const currentTime = new Date().getTime() - new Date('2023-01-01').getTime()
 
@@ -17,7 +17,7 @@ export async function onRequest({ request, env }) {
         if (weatherResponse.ok) {
             response = await weatherResponse.json()
             await env.API.put(storageKey, JSON.stringify({
-                expireAt: currentTime + 10 * 60 * 1000,
+                expireAt: currentTime + 10 * 60000,
                 data: response
             }))
         }

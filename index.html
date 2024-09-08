@@ -21,46 +21,6 @@
   <svg id="fader"></svg>
   <script src="/src/index.tsx" type="module"></script>
   <script>
-    function loadWeather() {
-      let weatherCode = document.querySelector('#weatherCode')?.value
-      if (!weatherCode) return
-      weatherCode = parseInt(weatherCode)
-      //Parse icon
-      let icon = null
-      let hour = new Date().getHours()
-      let isDay = hour >= 6 && hour < 18
-      if ([200, 201, 202, 210, 211, 212, 221, 230, 231, 232].includes(weatherCode)) {
-        icon = Skycons.RAIN //Thunderstorm
-      } else if ([300, 301, 302, 310, 311, 312, 313, 314, 321].includes(weatherCode)) {
-        icon = Skycons.RAIN //Drizzle
-      } else if ([500, 501, 502, 503, 504, 511, 520, 521, 522, 531].includes(weatherCode)) {
-        icon = Skycons.RAIN
-      } else if ([600, 601, 602, 611, 612, 613, 615, 616, 620, 621, 622].includes(weatherCode)) {
-        icon = Skycons.SNOW
-      } else if (weatherCode === 800) {
-        icon = isDay ? Skycons.CLEAR_DAY : Skycons.CLEAR_NIGHT
-      } else if ([801, 802, 803, 804].includes(weatherCode)) {
-        if (weatherCode >= 803) {
-          icon = Skycons.CLOUDY
-        } else {
-          icon = isDay ? Skycons.PARTLY_CLOUDY_DAY : Skycons.PARTLY_CLOUDY_NIGHT
-        }
-      } else if ([762, 761, 751, 731, 721].includes(weatherCode)) {
-        icon = Skycons.SLEET
-      } else if ([771, 781].includes(weatherCode)) {
-        icon = Skycons.WIND
-      } else if ([701, 711, 741].includes(weatherCode)) {
-        icon = Skycons.FOG
-      } else {
-        console.log('Unknown weather')
-        return
-      }
-      // Set weather icon to canvas
-      var skycons = new Skycons({ "color": '#FFA500' })
-      skycons.add("weather-icon", icon)
-      skycons.play()
-    }
-
     document.addEventListener('DOMContentLoaded', function () {
       // weather tooltip
       setTimeout(() => {

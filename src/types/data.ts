@@ -1,4 +1,5 @@
 import { GroupItem } from "./group"
+import { YoutubeItem } from "./youtube"
 
 export type WebData = {
   localPingUrl: string
@@ -7,4 +8,5 @@ export type WebData = {
   latitude: number
   showSearchBox: boolean
   groups: GroupItem[]
+  youtube: YoutubeItem
 }

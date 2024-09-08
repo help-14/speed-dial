@@ -159,4 +159,10 @@ export const WebsiteData: WebData = {
       ],
     },
   ],
+  youtube: {
+    live: [
+      "https://www.youtube.com/@ThangLongTv",
+      "https://www.youtube.com/@thanglongtvcong1800",
+    ],
+  },
 }
