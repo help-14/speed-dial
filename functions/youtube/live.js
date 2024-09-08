@@ -63,13 +63,13 @@ export async function onRequest({ request, env }) {
   if (currentTime > expireAt) {
     let channelID = liveInfo?.data?.channelID
     if (!channelID) channelID = await fetchChannelID(url)
-    let liveData = await fetchLiveStream(channelID)
-    let thumb = getThumbnailUrl(liveUrl)
+    // let liveData = await fetchLiveStream(channelID)
+    // let thumb = getThumbnailUrl(liveData.url)
 
     response = {
-      title: liveData.title,
-      url: liveData.url,
-      image: thumb,
+      // title: liveData.title,
+      // url: liveData.url,
+      // image: thumb,
       channelID: channelID,
     }
     await env.API.put(storageKey, JSON.stringify({
