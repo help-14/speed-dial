@@ -19,29 +19,27 @@ const fetchLiveStream = async (channelID) => {
       `https://youtube.com/channel/${channelID}/live`
     )
     let text = await response.text()
-    text = text.substring(text.indexOf('rel="canonical"'))
+    if (text.includes('rel="canonical"')) {
+      text = text.substring(text.indexOf('rel="canonical"'))
 
-    const uStart = text.indexOf('href="') + 6
-    const uEnd = text.indexOf('>') - 1
-    let canonicalURL = text.substring(uStart, uEnd - uStart)
+      const uStart = text.indexOf('href="') + 6
+      const uEnd = text.indexOf('>') - 1
+      let canonicalURL = text.substring(uStart, uEnd - uStart)
 
-    const tStart = text.indexOf('<title>') + 7
-    const tEnd = text.indexOf('</title>')
-    let title = text.substring(tStart, tEnd - tStart)
-    if (title.includes("-")) {
-      title = title.substring(0, title.lastIndexOf("-"))
-    }
-    title = title.trim()
+      const tStart = text.indexOf('<title>') + 7
+      const tEnd = text.indexOf('</title>')
+      let title = text.substring(tStart, tEnd - tStart)
+      if (title.includes("-")) {
+        title = title.substring(0, title.lastIndexOf("-"))
+      }
+      title = title.trim()
 
-    let isStreaming = canonicalURL?.includes("/watch?v=")
-    if (isStreaming === true) {
       return {
         title: title,
         url: canonicalURL,
       }
     }
   } catch {
-    console.error
   }
   return null
 }
@@ -50,6 +48,11 @@ export async function onRequest({ request, env }) {
   const { searchParams } = new URL(request.url)
   let url = searchParams.get('url')
   let response = {}
+  const resOption = {
+    headers: {
+      "content-type": "application/json;charset=UTF-8",
+    },
+  }
 
   if (!url) return new Response("Bad request")
   const storageKey = `yt-live-${url}`
@@ -63,7 +66,11 @@ export async function onRequest({ request, env }) {
   if (currentTime > expireAt) {
     let channelID = liveInfo?.data?.channelID
     if (!channelID) channelID = await fetchChannelID(url)
-    let liveData = await fetchLiveStream(channelID)
+    if (!channelID) return new Response(JSON.stringify(response), resOption)
+
+    const liveData = await fetchLiveStream(channelID)
+    if (!liveData) return new Response(JSON.stringify(response), resOption)
+
     let thumb = getThumbnailUrl(liveData.url)
 
     response = {
@@ -72,6 +79,7 @@ export async function onRequest({ request, env }) {
       image: thumb,
       channelID: channelID,
     }
+
     await env.API.put(storageKey, JSON.stringify({
       expireAt: currentTime + 10 * 60000,
       data: response
@@ -80,9 +88,5 @@ export async function onRequest({ request, env }) {
     response = liveInfo.data
   }
 
-  return new Response(JSON.stringify(response), {
-    headers: {
-      "content-type": "application/json;charset=UTF-8",
-    },
-  })
+  return new Response(JSON.stringify(response), resOption)
 }
