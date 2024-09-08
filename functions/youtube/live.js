@@ -19,13 +19,26 @@ const fetchLiveStream = async (channelID) => {
       `https://youtube.com/channel/${channelID}/live`
     )
     let text = await response.text()
-    let html = document.createElement("html")
-    html.innerHTML = text
-    let canonicalURLTag = html.querySelector("link[rel=canonical]")
-    let canonicalURL = canonicalURLTag?.getAttribute("href")
+    text = text.substring(text.indexOf('rel="canonical"'))
+
+    const uStart = text.indexOf('href="') + 6
+    const uEnd = text.indexOf('>') - 1
+    let canonicalURL = text.substring(uStart, uEnd - uStart)
+
+    const tStart = text.indexOf('<title>') + 7
+    const tEnd = text.indexOf('</title>')
+    let title = text.substring(tStart, tEnd - tStart)
+    if (title.includes("-")) {
+      title = title.substring(0, title.lastIndexOf("-"))
+    }
+    title = title.trim()
+
     let isStreaming = canonicalURL?.includes("/watch?v=")
     if (isStreaming === true) {
-      return canonicalURL
+      return {
+        title: title,
+        url: canonicalURL,
+      }
     }
   } catch {
     console.error
@@ -50,12 +63,12 @@ export async function onRequest({ request, env }) {
   if (currentTime > expireAt) {
     let channelID = liveInfo?.data?.channelID
     if (!channelID) channelID = await fetchChannelID(url)
-    let liveUrl = await fetchLiveStream(channelID)
+    let liveData = await fetchLiveStream(channelID)
     let thumb = getThumbnailUrl(liveUrl)
 
     response = {
-      title: "",
-      url: liveUrl,
+      title: liveData.title,
+      url: liveData.url,
       image: thumb,
       channelID: channelID,
     }
