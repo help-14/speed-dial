@@ -96,6 +96,10 @@ body {
   cursor: pointer;
 }
 
+.button:active {
+  opacity: 0.5;
+}
+
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   .button:hover {
     -webkit-backdrop-filter: blur(10px);
