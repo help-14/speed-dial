@@ -6,7 +6,7 @@ export async function onRequest({ request, env }) {
     }
   }
   let res = await fetch("https://dashboard.honeygain.com/api/v1/users/balances", reqOptions)
-  let data = await res.json()
+  let data = await res.text()
 
   const resOptions = {
     headers: {

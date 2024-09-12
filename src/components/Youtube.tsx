@@ -26,7 +26,6 @@ const Youtube: Component<{ data: YoutubeItem }> = (props) => {
         ).json()
         if (data.url) liveArr.push(data)
       } catch (err) {
-        console.warn(err)
         liveArr.push({
           title: "Lãnh đạo cấp cao CHDCND Triều Tiên kiểm tra quân đội",
           url: "https://www.youtube.com/watch?v=Szi79KJCPpI",
