@@ -6,8 +6,6 @@ import {
   For,
   createResource,
 } from "solid-js"
-import hexagons from "../assets/svg/hexagons.svg"
-import dollar from "../assets/svg/dollar.svg"
 
 type HoneygainInfo = {
   meta: string | null
@@ -73,8 +71,8 @@ const Honeygain: Component = () => {
     }
   })
 
-  const hexagonsMask = `url(${hexagons}) no-repeat center / contain`
-  const dollarMask = `url(${dollar}) no-repeat center / contain`
+  const hexagonsMask = `url(https://help-14.github.io/files/icons/hexagons.svg) no-repeat center / contain`
+  const dollarMask = `url(https://help-14.github.io/files/icons/dollar.svg) no-repeat center / contain`
 
   return (
     <Show when={showing()}>
@@ -86,18 +84,14 @@ const Honeygain: Component = () => {
           <div
             class="svg-icon small-icon mx-3"
             style={{ mask: hexagonsMask, "-webkit-mask": hexagonsMask }}
-          >
-            <img src={hexagons} class="hidden" />
-          </div>
+          ></div>
           <span>{info()?.data.realtime.credits}</span>
         </div>
         <div class="my-1 flex flex-row items-center">
           <div
             class="svg-icon small-icon mx-3"
             style={{ mask: dollarMask, "-webkit-mask": dollarMask }}
-          >
-            <img src={dollar} class="hidden" />
-          </div>
+          ></div>
           <span>{income()}</span>
         </div>
       </div>
