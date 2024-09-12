@@ -3,7 +3,7 @@ const getThumbnailUrl = (videoUrl) => {
   if (videoID.includes("&")) {
     videoID = videoID.substring(0, videoID.indexOf("&"))
   }
-  return `https://img.youtube.com/vi/${videoID}/hqdefault.jpg`
+  return `https://img.youtube.com/vi/${videoID}/mqdefault.jpg`
 }
 
 const fetchChannelID = async (url) => {
