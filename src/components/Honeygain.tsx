@@ -86,14 +86,18 @@ const Honeygain: Component = () => {
           <div
             class="svg-icon small-icon mx-3"
             style={{ mask: hexagonsMask, "-webkit-mask": hexagonsMask }}
-          ></div>
+          >
+            <img src={hexagons} class="hidden" />
+          </div>
           <span>{info()?.data.realtime.credits}</span>
         </div>
         <div class="my-1 flex flex-row items-center">
           <div
             class="svg-icon small-icon mx-3"
             style={{ mask: dollarMask, "-webkit-mask": dollarMask }}
-          ></div>
+          >
+            <img src={dollar} class="hidden" />
+          </div>
           <span>{income()}</span>
         </div>
       </div>
