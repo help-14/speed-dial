@@ -182,7 +182,7 @@ const Weather: Component = () => {
     try {
       const data = await (
         await fetch(
-          `/weather?longitude=${coords.longitude}&latitude=${coords.latitude}`
+          `/api/weather?longitude=${coords.longitude}&latitude=${coords.latitude}`
         )
       ).json()
       return data

@@ -4,6 +4,17 @@ body {
   z-index: -999;
 }
 
+.bgOverlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bgColor);
+  color: var(--foreground);
+  position: absolute;
+  opacity: 0.7;
+}
+
 .bg {
   width: 100%;
   height: 100%;
@@ -27,6 +38,10 @@ body {
 
 .accent {
   color: var(--accentColor) !important;
+}
+
+hr {
+  border: 1px solid var(--foreground);
 }
 
 .hidden {
@@ -78,12 +93,41 @@ body {
   vertical-align: middle;
 }
 
+.svg-icon {
+  background-color: var(--foreground) !important;
+  vertical-align: middle;
+}
+
+.small-icon {
+  width: 16px !important;
+  height: 16px !important;
+}
+
 .group-items .svg-icon {
   vertical-align: middle;
-  /* fill: var(--foreground) !important; */
   background-color: var(--foreground) !important;
   width: 32px !important;
   height: 32px !important;
+}
+
+.round-corner {
+  border-radius: 0.7rem !important;
+}
+
+.panel {
+  border-radius: 0.7rem !important;
+}
+
+.panel-border {
+  box-shadow: 0 0 10px var(--bgColor);
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  border-radius: 0.7rem !important;
+}
+
+.panel:hover {
+  box-shadow: 0 0 10px var(--bgColor);
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  opacity: 1;
 }
 
 .button {
@@ -94,6 +138,19 @@ body {
   box-shadow: 0 0 10px var(--bgColor);
   background-color: rgba(0, 0, 0, 0.3) !important;
   cursor: pointer;
+  opacity: 1;
+}
+
+.button.foreground:hover {
+  box-shadow: 0 0 10px var(--foreground);
+  background-color: var(--foreground) !important;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.button.foreground:active {
+  box-shadow: 0 0 10px var(--bgColor);
+  opacity: 0.5;
 }
 
 .button:active {
@@ -110,6 +167,10 @@ body {
 
 .opacity-bg {
   background-color: var(--bgColor) !important;
+}
+
+.widget {
+  opacity: 0.7;
 }
 
 #fader {

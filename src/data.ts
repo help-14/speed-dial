@@ -137,7 +137,7 @@ export const WebsiteData: WebData = {
             {
               title: "Giang Huy",
               icon: "https://help-14.github.io/files/icons/taobao.svg",
-              url: "https://hethong.gianghuy.com/danh-sach-don-hang?t=3",
+              url: "https://hethong.gianghuy.com/dashboard",
             },
           ],
         },

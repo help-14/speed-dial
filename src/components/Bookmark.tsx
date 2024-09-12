@@ -24,10 +24,7 @@ const Bookmark: Component<{ data: BookmarkItem }> = (props) => {
       return (
         <div
           class="svg-icon"
-          style={{
-            mask: svgMask,
-            "-webkit-mask": svgMask,
-          }}
+          style={{ mask: svgMask, "-webkit-mask": svgMask }}
         ></div>
       )
     } else if (
