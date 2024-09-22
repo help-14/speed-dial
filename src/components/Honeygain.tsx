@@ -6,6 +6,7 @@ import {
   For,
   createResource,
 } from "solid-js"
+import "./css/Honeygain.css"
 
 type HoneygainInfo = {
   meta: string | null
@@ -50,6 +51,16 @@ const Honeygain: Component = () => {
     }
   }
 
+  const formatAmount = (amount: number): string => {
+    if (amount >= 1000) {
+      let thousand = Math.floor(amount / 1000)
+      let cents = amount - thousand * 1000
+      return `${thousand}.${cents}`
+    } else {
+      return `0.${amount}`
+    }
+  }
+
   const [showing, setShowing] = createSignal(false)
   const [info, { refetch }] = createResource<HoneygainInfo>(fetchHoneygain)
   const [income, setIncome] = createSignal<string>("0")
@@ -58,7 +69,7 @@ const Honeygain: Component = () => {
     if (info() != null) {
       setShowing(true)
 
-      let amount = info()?.data.realtime.usd_cents ?? 0
+      let amount = info()?.data.payout.usd_cents ?? 0
       if (amount >= 1000) {
         let thousand = Math.floor(amount / 1000)
         let cents = amount - thousand * 1000
@@ -78,22 +89,58 @@ const Honeygain: Component = () => {
     <Show when={showing()}>
       <div class="py-3 px-5 mb-2 panel widget">
         <a href="https://dashboard.honeygain.com">
-          <p class="font-bold">Honeygain:</p>
+          <p class="font-bold mb-3">Honeygain:</p>
         </a>
-        <div class="my-1 flex flex-row items-center">
-          <div
-            class="svg-icon small-icon mx-3"
-            style={{ mask: hexagonsMask, "-webkit-mask": hexagonsMask }}
-          ></div>
-          <span>{info()?.data.realtime.credits}</span>
-        </div>
-        <div class="my-1 flex flex-row items-center">
-          <div
-            class="svg-icon small-icon mx-3"
-            style={{ mask: dollarMask, "-webkit-mask": dollarMask }}
-          ></div>
-          <span>{income()}</span>
-        </div>
+        <table class="border-0">
+          <tbody>
+            <tr>
+              <td>
+                <p>Today:</p>
+              </td>
+              <td>
+                <div class="my-1 flex flex-row items-center">
+                  <div
+                    class="small-icon mx-3"
+                    style={{ mask: hexagonsMask, "-webkit-mask": hexagonsMask }}
+                  ></div>
+                  <span>{info()?.data.realtime.credits}</span>
+                </div>
+              </td>
+              <td>
+                <div class="my-1 flex flex-row items-center">
+                  <div
+                    class="small-icon mx-3"
+                    style={{ mask: dollarMask, "-webkit-mask": dollarMask }}
+                  ></div>
+                  <span>{income()}</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Payout:</p>
+              </td>
+              <td>
+                <div class="my-1 flex flex-row items-center">
+                  <div
+                    class="small-icon mx-3"
+                    style={{ mask: hexagonsMask, "-webkit-mask": hexagonsMask }}
+                  ></div>
+                  <span>{info()?.data.payout.credits}</span>
+                </div>
+              </td>
+              <td>
+                <div class="my-1 flex flex-row items-center">
+                  <div
+                    class="small-icon mx-3"
+                    style={{ mask: dollarMask, "-webkit-mask": dollarMask }}
+                  ></div>
+                  <span>{income()}</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </Show>
   )

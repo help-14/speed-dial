@@ -4,9 +4,11 @@ import {
   Show,
   createResource,
   onMount,
+  createEffect,
 } from "solid-js"
 import { WeatherApi } from "../types/weather"
 import { coordsSettings } from "../utils/settings"
+import "./css/Weather.css"
 
 import thunderstorms from "../assets/svg/thunderstorms.svg"
 import thunderstormsDay from "../assets/svg/thunderstorms-day.svg"
@@ -59,6 +61,7 @@ import cloudyNight from "../assets/svg/partly-cloudy-night.svg"
 
 const Weather: Component = () => {
   const [coords, setCoords] = coordsSettings()
+  const [visible, setVisible] = createSignal(false)
 
   function getWeatherIcon(weatherCode: number): string {
     let hour = new Date().getHours()
@@ -221,6 +224,9 @@ const Weather: Component = () => {
   }
 
   const [weather, { refetch }] = createResource<WeatherApi>(fetchWeather)
+  createEffect(() => {
+    setVisible(weather() != null)
+  })
 
   const toCelsius = (temp: number): string => `${Math.floor(temp - 273.15)}°C`
   const toFahrenheit = (temp: number): string =>
@@ -259,25 +265,30 @@ const Weather: Component = () => {
   }
 
   return (
-    <div
-      id="weather-button"
-      class="hidden md:flex flex-row button p-3"
-      title="Click to refresh location"
-      onclick={getLocation}
-    >
-      <div class="mr-3 my-auto">
-        <img
-          src={getWeatherIcon(weatherCode())}
-          alt="logo"
-          width="60px"
-          height="60px"
-        />
-      </div>
-      <div id="weather-info" class="flex-col ml-2 my-auto flex">
-        <div id="temp text-center">{temp()}</div>
-        <hr class="my-1" />
-        <div id="humidity text-center">{humidity()}</div>
-      </div>
+    <div>
+      <Show when={visible()}>
+        <div
+          id="weather-button"
+          class="hidden md:flex flex-row button p-3"
+          title="Click to refresh location"
+          onclick={getLocation}
+          data-tooltip-target="weather-tooltip"
+        >
+          <div class="mr-3 my-auto">
+            <img
+              src={getWeatherIcon(weatherCode())}
+              alt="logo"
+              width="60px"
+              height="60px"
+            />
+          </div>
+          <div id="weather-info" class="flex-col mx-2 my-auto flex">
+            <div id="temp text-center">{temp()}</div>
+            <hr class="my-1" />
+            <div id="humidity text-center">{humidity()}</div>
+          </div>
+        </div>
+      </Show>
       <div
         id="weather-tooltip"
         role="tooltip"

@@ -7,6 +7,7 @@ import {
   createResource,
 } from "solid-js"
 import { YoutubeItem } from "../types/youtube"
+import "./css/Youtube.css"
 
 type VideoInfo = {
   title: string
@@ -48,7 +49,7 @@ const Youtube: Component<{ data: YoutubeItem }> = (props) => {
     <Show when={showing()}>
       <div class="py-3 pb-1 px-5 mb-2 panel widget">
         <a href="https://https://www.youtube.com">
-          <p class="font-bold">Youtube:</p>
+          <p class="font-bold mb-3">Youtube:</p>
         </a>
         <div
           classList={{
@@ -60,11 +61,14 @@ const Youtube: Component<{ data: YoutubeItem }> = (props) => {
           <For each={live()}>
             {(video) => (
               <a href={video.url}>
-                <div class="button foreground min-w-24 max-w-64 md:opacity-60 relative">
+                <div class="button foreground min-w-24 max-w-80 md:opacity-60 relative">
                   <img src={video.image} class="round-corner" />
-                  <span class="bg-red-800 text-red-100 text-xs font-medium px-2.5 py-0.5 rounded-l rounded-b absolute right-0 bottom-0">
+                  <span class="bg-red-800 text-red-100 text-xs font-medium px-2.5 py-0.5 rounded-l rounded-t absolute right-0 top-0">
                     LIVE
                   </span>
+                  <div class="hidden title absolute bottom-0 left-0 right-0 p-2">
+                    <p>{video.title}</p>
+                  </div>
                 </div>
               </a>
             )}

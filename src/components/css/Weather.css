@@ -1,0 +1,7 @@
+hr {
+  border: 1px solid var(--foreground);
+}
+
+.opacity-bg {
+  background-color: var(--bgColor) !important;
+}

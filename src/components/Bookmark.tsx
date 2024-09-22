@@ -23,7 +23,7 @@ const Bookmark: Component<{ data: BookmarkItem }> = (props) => {
       let svgMask = `url(${bookmark.icon}) no-repeat center / contain`
       return (
         <div
-          class="svg-icon"
+          class="align-middle w-8 h-8 foreground"
           style={{ mask: svgMask, "-webkit-mask": svgMask }}
         ></div>
       )
@@ -38,9 +38,16 @@ const Bookmark: Component<{ data: BookmarkItem }> = (props) => {
 
   return (
     <Show when={showing()}>
-      <a href={url()} class="button">
-        <div class="icon-container">{showIcon()}</div>
-        <h6>{bookmark.title}</h6>
+      <a
+        href={url()}
+        class="button p-4 items-center mb-0 rounded-xl leading-loose flex no-underline"
+      >
+        <div class="mt-0 ml-2 mr-3 w-8 h-8 items-center text-center">
+          {showIcon()}
+        </div>
+        <p class="items-center mb-0 ml-2 align-bottom font-medium">
+          {bookmark.title}
+        </p>
       </a>
     </Show>
   )

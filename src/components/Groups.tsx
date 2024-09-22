@@ -10,10 +10,10 @@ const Groups: Component<{ data: GroupItem[] }> = (props) => {
         {(group) => (
           <div class="flex flex-col">
             <span class="font-bold text-3xl mt-10 mb-5">{group.title}</span>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
               <For each={group.data}>
                 {(col) => (
-                  <div class="group-items flex flex-col gap-2">
+                  <div class="group-items flex flex-col gap-3">
                     <span class="accent">{col.title}</span>
                     <For each={(col as GroupItem).data}>
                       {(bm) => <Bookmark data={bm as BookmarkItem} />}

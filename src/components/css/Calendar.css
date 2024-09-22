@@ -1,0 +1,57 @@
+.wrapper header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .icons {
+  display: flex;
+}
+
+.calendar ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+
+.calendar li {
+  width: calc(100% / 7);
+}
+
+.calendar .weeks li {
+  cursor: default;
+}
+
+.calendar .days li {
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 14px;
+}
+
+.days li.inactive {
+  opacity: 0;
+}
+
+.days li.active {}
+
+.days li::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.days li.active::before {
+  background: var(--accentColor);
+}
+
+.days li:not(.active):hover::before {
+  background: var(--bgColor);
+}

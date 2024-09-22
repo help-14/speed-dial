@@ -1,0 +1,6 @@
+.small-icon {
+  background-color: var(--foreground) !important;
+  vertical-align: middle;
+  width: 16px !important;
+  height: 16px !important;
+}

@@ -6,6 +6,7 @@ import Weather from "./components/Weather"
 import SearchBox from "./components/SearchBox"
 import Youtube from "./components/Youtube"
 import Honeygain from "./components/Honeygain"
+import Calendar from "./components/Calendar"
 import "flowbite"
 
 const App: Component = () => {
@@ -23,16 +24,17 @@ const App: Component = () => {
             <div class="grow">
               <Timer />
             </div>
-            <div id="header-right" class="my-auto pl-5 pr-5">
-              <Suspense>
-                <Weather />
-              </Suspense>
+            <div
+              id="header-right"
+              class="my-auto pl-5 pr-5 content-center float-right z-50"
+            >
+              <Weather />
             </div>
           </div>
           <div class="">
             <Groups data={WebsiteData.groups} />
           </div>
-          <div id="footer" class="row"></div>
+          <div id="footer" class="row mb-10"></div>
         </div>
       </div>
       <div id="right" class="flex-1 flex items-start justify-end">
