@@ -52,9 +52,9 @@ const Honeygain: Component = () => {
   }
 
   const formatAmount = (amount: number): string => {
-    if (amount >= 1000) {
-      let thousand = Math.floor(amount / 1000)
-      let cents = amount - thousand * 1000
+    if (amount >= 100) {
+      let thousand = Math.floor(amount / 100)
+      let cents = amount - thousand * 100
       return `${thousand}.${cents}`
     } else {
       return `0.${amount}`
@@ -64,22 +64,16 @@ const Honeygain: Component = () => {
   const [showing, setShowing] = createSignal(false)
   const [info, { refetch }] = createResource<HoneygainInfo>(fetchHoneygain)
   const [income, setIncome] = createSignal<string>("0")
+  const [totalIncome, setTotalIncome] = createSignal<string>("0")
 
   createEffect(() => {
-    if (info() != null) {
-      setShowing(true)
-
-      let amount = info()?.data.payout.usd_cents ?? 0
-      if (amount >= 1000) {
-        let thousand = Math.floor(amount / 1000)
-        let cents = amount - thousand * 1000
-        setIncome(`${thousand}.${cents}`)
-      } else {
-        setIncome(`0.${amount}`)
-      }
-    } else {
+    if (info() == null) {
       setShowing(false)
+      return
     }
+    setIncome(formatAmount(info()?.data.realtime.usd_cents ?? 0))
+    setTotalIncome(formatAmount(info()?.data.payout.usd_cents ?? 0))
+    setShowing(true)
   })
 
   const hexagonsMask = `url(https://help-14.github.io/files/icons/hexagons.svg) no-repeat center / contain`
@@ -103,7 +97,7 @@ const Honeygain: Component = () => {
                     class="small-icon mx-3"
                     style={{ mask: hexagonsMask, "-webkit-mask": hexagonsMask }}
                   ></div>
-                  <span>{info()?.data.realtime.credits}</span>
+                  <span>{Math.floor(info()?.data.realtime.credits ?? 0)}</span>
                 </div>
               </td>
               <td>
@@ -126,7 +120,7 @@ const Honeygain: Component = () => {
                     class="small-icon mx-3"
                     style={{ mask: hexagonsMask, "-webkit-mask": hexagonsMask }}
                   ></div>
-                  <span>{info()?.data.payout.credits}</span>
+                  <span>{Math.floor(info()?.data.payout.credits ?? 0)}</span>
                 </div>
               </td>
               <td>
@@ -135,7 +129,7 @@ const Honeygain: Component = () => {
                     class="small-icon mx-3"
                     style={{ mask: dollarMask, "-webkit-mask": dollarMask }}
                   ></div>
-                  <span>{income()}</span>
+                  <span>{totalIncome()}</span>
                 </div>
               </td>
             </tr>
