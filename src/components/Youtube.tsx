@@ -8,6 +8,7 @@ import {
 } from "solid-js"
 import { YoutubeItem } from "../types/youtube"
 import "./css/Youtube.css"
+import { IsDev } from "../utils"
 
 type VideoInfo = {
   title: string
@@ -27,12 +28,14 @@ const Youtube: Component<{ data: YoutubeItem }> = (props) => {
         ).json()
         if (data.url) liveArr.push(data)
       } catch (err) {
-        liveArr.push({
-          title: "Lãnh đạo cấp cao CHDCND Triều Tiên kiểm tra quân đội",
-          url: "https://www.youtube.com/watch?v=Szi79KJCPpI",
-          image: "https://i.ytimg.com/vi/Szi79KJCPpI/mqdefault.jpg",
-          channelID: "UC0hg0ahsQN4lH3w4ENPaeXA",
-        })
+        if (IsDev()) {
+          liveArr.push({
+            title: "Lãnh đạo cấp cao CHDCND Triều Tiên kiểm tra quân đội",
+            url: "https://www.youtube.com/watch?v=Szi79KJCPpI",
+            image: "https://i.ytimg.com/vi/Szi79KJCPpI/mqdefault.jpg",
+            channelID: "UC0hg0ahsQN4lH3w4ENPaeXA",
+          })
+        }
       }
     }
     return liveArr

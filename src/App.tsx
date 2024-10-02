@@ -39,8 +39,8 @@ const App: Component = () => {
       </div>
       <div id="right" class="flex-1 flex items-start justify-end">
         <div class="flex flex-col pt-10 p-3">
-          <Honeygain />
-          <Youtube data={WebsiteData.youtube} />
+          {/* <Honeygain />
+          <Youtube data={WebsiteData.youtube} /> */}
         </div>
       </div>
     </div>
