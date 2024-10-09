@@ -14,14 +14,9 @@ export const WebsiteData: WebData = {
           title: "Servers",
           data: [
             {
-              title: "Router OS",
-              icon: "fa-solid fa-ethernet",
-              url: "http://10.0.0.1/",
-            },
-            {
               title: "UniFi",
               icon: "fa-solid fa-u",
-              url: "http://192.168.2.1/network",
+              url: "http://192.168.0.1/network",
             },
             {
               title: "iHost",
@@ -31,7 +26,7 @@ export const WebsiteData: WebData = {
             {
               title: "Zimaboard",
               icon: "fa-solid fa-server",
-              url: "http://zima.local:8888",
+              url: "http://zima.local",
             },
           ],
         },
