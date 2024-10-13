@@ -26,7 +26,7 @@ export const WebsiteData: WebData = {
             {
               title: "Zimaboard",
               icon: "fa-solid fa-server",
-              url: "http://zima.local",
+              url: "http://zima.localdomain",
             },
           ],
         },
