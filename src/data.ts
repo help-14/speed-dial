@@ -26,7 +26,7 @@ export const WebsiteData: WebData = {
             {
               title: "Zimaboard",
               icon: "fa-solid fa-server",
-              url: "http://zima.localdomain",
+              url: "http://zima.local",
             },
           ],
         },
@@ -36,18 +36,18 @@ export const WebsiteData: WebData = {
             {
               title: "jDownloader",
               icon: "fa-solid fa-cloud-arrow-down",
-              url: "http://zima.localdomain:5800",
+              url: "http://zima.local:5800",
             },
             {
               title: "Torrent",
               icon: "https://help-14.github.io/files/icons/utorrent.svg",
-              url: "http://zima.localdomain:8181",
+              url: "http://zima.local:8181",
             },
             {
               title: "Jellyfin",
               icon: "https://help-14.github.io/files/icons/jellyfin.svg",
               url: "https://phim.nhan.pt",
-              urlLocal: "http://zima.localdomain:8097",
+              urlLocal: "http://zima.local:8097",
             },
           ],
         },
