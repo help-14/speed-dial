@@ -24,9 +24,9 @@ export const WebsiteData: WebData = {
               url: "http://ihost.local/",
             },
             {
-              title: "Zimaboard",
+              title: "Truenas",
               icon: "fa-solid fa-server",
-              url: "http://zima.local",
+              url: "http://truenas.local",
             },
           ],
         },
@@ -36,18 +36,18 @@ export const WebsiteData: WebData = {
             {
               title: "jDownloader",
               icon: "fa-solid fa-cloud-arrow-down",
-              url: "http://zima.local:5800",
+              url: "http://truenas.local:15000",
             },
             {
               title: "Torrent",
               icon: "https://help-14.github.io/files/icons/utorrent.svg",
-              url: "http://zima.local:8181",
+              url: "http://truenas.local:30038",
             },
             {
               title: "Jellyfin",
               icon: "https://help-14.github.io/files/icons/jellyfin.svg",
               url: "https://phim.nhan.pt",
-              urlLocal: "http://zima.local:8097",
+              urlLocal: "http://truenas.local:30013",
             },
           ],
         },
