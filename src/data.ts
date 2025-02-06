@@ -19,14 +19,14 @@ export const WebsiteData: WebData = {
               url: "http://10.0.0.1/network",
             },
             {
-              title: "iHost",
-              icon: "https://help-14.github.io/files/icons/matter.svg",
-              url: "http://ihost.local/",
-            },
-            {
               title: "Truenas",
               icon: "fa-solid fa-server",
               url: "http://truenas.local",
+            },
+            {
+              title: "Dockage",
+              icon: "fa-brands fa-docker",
+              url: "http://truenas.local:31014/",
             },
           ],
         },
