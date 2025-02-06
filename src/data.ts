@@ -24,7 +24,7 @@ export const WebsiteData: WebData = {
               url: "http://truenas.local",
             },
             {
-              title: "Dockage",
+              title: "Dockge",
               icon: "fa-brands fa-docker",
               url: "http://truenas.local:31014/",
             },
